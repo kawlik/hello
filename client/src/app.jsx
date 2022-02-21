@@ -1,5 +1,11 @@
 import React from 'react';
 
+//  local contexts
+import AuthProvider from '@/contexts/auth.context';
+
+//  local components
+import Login from '@/components/login';
+
 
 /*  Component logic
 /*   *   *   *   *   *   *   *   *   *   */
@@ -12,6 +18,10 @@ export default function App() {
 
 return(
     <>
-        <h2>Hello App!</h2>
+    <AuthProvider>
+
+        <Login />
+
+    </AuthProvider>
     </>
 )};
