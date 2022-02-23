@@ -9,16 +9,13 @@ import firebaseConfig from '@/configs/firebase.config';
 /*   *   *   *   *   *   *   *   *   *   */
 
 //  firebase app object
-export const firebaseApp = initializeApp( firebaseConfig );
+const firebaseApp = initializeApp( firebaseConfig );
 
 //  firebase auth object
-export const firebaseAuth = getAuth();
+const firebaseAuth = getAuth();
 
-
-/*  Firebase login functions
-/*   *   *   *   *   *   *   *   *   *   */
-
-export async function getAuthWithProvider( provider ) {
+//  standard firebase login function template
+async function getAuthWithProvider( provider ) {
 
     //  init result object
     let result = null;
@@ -35,10 +32,14 @@ export async function getAuthWithProvider( provider ) {
 
     } finally {
 
-        //  return standar output
+        //  return standard output
         return result?.user || null;
     }
 };
+
+
+/*  Firebase login functions
+/*   *   *   *   *   *   *   *   *   *   */
 
 export async function getAuthWithGoogle() {
 

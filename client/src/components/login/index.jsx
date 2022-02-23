@@ -1,7 +1,7 @@
 import React from 'react';
 
 //  local contexts
-import { useAuthContext } from '../../contexts/auth.context';
+import { useAuthContext } from '@/contexts/auth.context';
 
 //  local style
 import './index.scss';
@@ -13,7 +13,7 @@ import './index.scss';
 export default function Login() {
 
     //  parse context data
-    const { loginWithGoogle } = useAuthContext();
+    const { loginWithGoogle, user } = useAuthContext();
 
     //  loging functions
     const processLoginWithGoogle = ( event ) => {
@@ -29,6 +29,8 @@ return(
     <section id='login'>
 
         <button className='btn btn-outline-primary' onClick={ processLoginWithGoogle }>Login with Google</button>
+
+        <button className='btn btn-outline-secondary' onClick={ () => console.log( user ) }>Log</button>
 
     </section>
 )};
