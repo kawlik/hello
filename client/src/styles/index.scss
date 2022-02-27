@@ -1,9 +1,21 @@
+@import url( 'https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap' );
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
 
     color: #343434;
-    background-color: #fff;
+    background-color: #ffffff;
 
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'League Spartan', sans-serif;
     font-size: medium;
     font-weight: 100;
 }
@@ -12,6 +24,7 @@ body {
 
     margin: 0;
     padding: 0;
+
     width: 100vw;
     height: 100vh;
 
@@ -21,5 +34,7 @@ body {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }
