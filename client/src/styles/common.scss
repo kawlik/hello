@@ -5,9 +5,27 @@ $c-font: #343434;
 $c-primary: #ffffff;
 $c-secondary: #f5f5f5;
 
+$c-facebook: #3b5998;
+$c-google: #0F9D58;
+$c-github: #333333;
+
 
 /*  fast mixins
 /*   *   *   *   *   *   *   *   *   *   */
+
+@mixin animateOnce {
+    animation-delay: .1s;
+    animation-duration: .2s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: both;
+}
+
+@mixin animateEaseIn {
+    @include animateOnce();
+    animation-name: easeIn;
+}
 
 @mixin boxShadow( $color: $c-font ) {
     box-shadow: 0 0 15px -5px rgba( $c-font, .5 );
@@ -15,4 +33,20 @@ $c-secondary: #f5f5f5;
 
 @mixin transition( $property: all ) {
     transition: $property ease 1000ms;
+}
+
+/*  fast animations
+/*   *   *   *   *   *   *   *   *   *   */
+
+@keyframes easeIn {
+    from {
+
+        transform: scale( .9 );
+        opacity: 0;
+
+    } to {
+
+        transform: scale( 1 );
+        opacity: 1;
+    }
 }

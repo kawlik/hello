@@ -1,0 +1,22 @@
+@import '../../styles/common';
+
+div#app-login-form {
+
+    @include boxShadow();
+    @include transition();
+
+    background-color: $c-primary;
+    border: 1px solid $c-secondary;
+    border-radius: 10px;
+    
+    padding: 20px;
+    max-width: 560px;
+    margin: 10px auto;
+
+    button.btn {
+
+        border-radius: 10px;
+        font-size: large;
+        text-align: center;
+    }
+}

@@ -7,6 +7,7 @@ section.app-bar-bottom {
 
     background-color: $c-primary;
     padding: 10px;
+    z-index: 10;
     gap: 10px;
 
     display: flex;
@@ -16,10 +17,16 @@ section.app-bar-bottom {
     align-content: center;
     align-items: stretch;
 
+    &.hide {
+
+        transform: translateY( 100% );
+    }
+
     button {
 
-        color: $c-font;
+        @include animateEaseIn();
 
+        color: $c-font;
         display: block;
         flex-basis: 100%;
     }

@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { getAuth, signInWithPopup, signInAnonymously, GoogleAuthProvider } from 'firebase/auth';
 
 //  local config
 import firebaseConfig from '@/configs/firebase.config';
@@ -41,6 +41,7 @@ async function getAuthWithProvider( provider ) {
 /*  Firebase login functions
 /*   *   *   *   *   *   *   *   *   *   */
 
+
 export async function getAuthWithGoogle() {
 
     //  set provider
@@ -51,4 +52,26 @@ export async function getAuthWithGoogle() {
 
     //  return fetched value
     return user;
+};
+
+export async function getAuthAnonymously() {
+
+    //  init result object
+    let result = null;
+
+    try {
+
+        //  await for response
+        result = await signInAnonymously( firebaseAuth );
+        
+    } catch( err ) {
+
+        //  log an error
+        console.error( err );
+
+    } finally {
+
+        //  return standard output
+        return result?.user || null;
+    }
 };

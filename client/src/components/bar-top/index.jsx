@@ -1,17 +1,15 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-//  services
-import { deleteUser } from '@/services/storage.service';
+//  local contexts
+import { useAuthContext } from '@/contexts/auth.context';
 
 //  icons
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
+import InfoIcon from '@mui/icons-material/Info';
 import LogoutIcon from '@mui/icons-material/Logout';
 
-//  local config
-import routerConfig from '@/configs/router.config';
-
-//  component style
+//  style
 import './index.scss';
 
 
@@ -20,18 +18,11 @@ import './index.scss';
 
 export default function BarTop() {
 
+    //  get user
+    const { user, logout } = useAuthContext();
+
     //   navigate
     const navigate = useNavigate();
-
-    //  logout function
-    const logout = () => {
-
-        //  delete user
-        deleteUser();
-
-        //  redirect to loging page
-        navigate( routerConfig.login );
-    };
 
     
 /*  Component layout
@@ -39,15 +30,24 @@ export default function BarTop() {
 
 return(
     <section className='app-bar-top' >
+    {
+        user
+        ? <>
+            <button className='btn' onClick={() => navigate(-1)}>
+                <ArrowCircleLeftIcon />
+                <small className='text-muted align-middle p-2' >Go back</small>
+            </button>
 
-        <button className='btn' onClick={ () => navigate( -1 ) }>
-            <ArrowCircleLeftIcon />
-            <small className='text-muted align-middle p-2' >Go back</small>
-        </button>
-
-        <button className='btn' onClick={ () => logout() }>
-            <LogoutIcon />
-        </button>
-
+            <button className='btn' onClick={() => logout()}>
+                <LogoutIcon />
+            </button>
+        </>
+        : <>
+            <button className='btn' >
+                <InfoIcon />
+                <small className='text-muted align-middle p-2' >Need help?</small>
+            </button>
+        </>
+    }
     </section>
 )};

@@ -1,9 +1,20 @@
-@import '../../styles/common';
+@import '../styles/common';
 
-main.app-main-bottom {
+main#app-main-content {
 
     @include transition();
+    @include animateEaseIn();
 
+    gap: 10px;
+    padding: 10px;
     flex-grow: 1;
-    background-color: red;
+
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: stretch;
+
+    overflow-x: hidden;
 }
