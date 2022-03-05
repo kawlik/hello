@@ -31,7 +31,7 @@ git commit -m 'deploy'
 cd ..
 
 #   push
-git subtree push --prefix dist origin gh-pages
+git subtree push --prefix client/dist origin gh-pages
 
 
 #   After deploy
