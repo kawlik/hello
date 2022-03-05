@@ -33,12 +33,12 @@ return(
     {
         user
         ? <>
-            <button className='btn' onClick={() => navigate(-1)}>
+            <button className='btn' onClick={ () => navigate(-1) } >
                 <ArrowCircleLeftIcon />
                 <small className='text-muted align-middle p-2' >Go back</small>
             </button>
 
-            <button className='btn' onClick={() => logout()}>
+            <button className='btn' onClick={ () => logout() } >
                 <LogoutIcon />
             </button>
         </>

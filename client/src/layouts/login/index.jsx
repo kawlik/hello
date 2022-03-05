@@ -30,34 +30,34 @@ return(
     <>
     <div id='app-login-form'>
 
-        <h2 className='fw-bold mb-0'>Join for free</h2>
+        <h2 className='fw-bold mb-0' >Join for free</h2>
 
 
         <hr className='my-3' />
-        <h3 className='fs-5 fw-bold mb-3'>Use a third-party</h3>
+        <h3 className='fs-5 fw-bold mb-3' >Use a third-party</h3>
 
         <button className='w-100 py-2 mb-2 btn btn-outline-primary btn-facebook' disabled >
             <FacebookIcon />
-            <span className='align-middle px-2 mt-1 d-inline-block'>Join with Facebook</span>
+            <span className='align-middle p-2' >Join with Facebook</span>
         </button>
 
         <button className='w-100 py-2 mb-2 btn btn-outline-success btn-google' onClick={ loginWithGoogle } >
             <GoogleIcon />
-            <span className='align-middle px-2 mt-1 d-inline-block'>Join with Google</span>
+            <span className='align-middle p-2' >Join with Google</span>
         </button>
 
         <button className='w-100 py-2 mb-2 btn btn-outline-dark btn-github' disabled >
             <GitHubIcon />
-            <span className='align-middle px-2 mt-1 d-inline-block'>Join with GitHub</span>
+            <span className='align-middle p-2' >Join with GitHub</span>
         </button>
 
 
         <hr className='my-3' />
-        <h3 className='fs-5 fw-bold mb-3'>Or join as anonymous</h3>
+        <h3 className='fs-5 fw-bold mb-3' >Or join as anonymous</h3>
 
         <button className='w-100 py-2 mb-2 btn btn-outline-secondary'  onClick={ loginAnonymously } >
             <NoAccountsIcon />
-            <span className='align-middle px-2 mt-1 d-inline-block'>Join anonymously</span>
+            <span className='align-middle p-2' >Join anonymously</span>
         </button>
 
     </div>

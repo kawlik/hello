@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { HashRouter as Router } from 'react-router-dom';
+
+//  local service
+import { getInstallPrompt } from './services/pwa.service';
 
 //  local contexts
 import AuthProvider from '@/contexts/auth.context';
@@ -8,6 +11,7 @@ import AuthProvider from '@/contexts/auth.context';
 import BarBottom from '@/components/bar-bottom';
 import BarTop from '@/components/bar-top';
 import Content from '@/layouts';
+import PWAInstall from '@/components/pwa-install';
 
 
 /*  Component logic
@@ -15,7 +19,49 @@ import Content from '@/layouts';
 
 export default function App() {
 
-    
+    //  PWA state
+    const [ installPrompt, setInstallPrompt ] = useState( false );
+
+
+    //  PWA utility functions
+    async function installPWA() {
+
+        //  get prompt
+        const installPWAPrompt = await getInstallPrompt();
+
+        //  prompt PWA install
+        installPWAPrompt.prompt();
+
+        //  await for outcome
+        const { outcome } = await installPWAPrompt.userChoice;
+
+        //  test outcome
+        if( outcome === 'accepted' ) {
+            
+            //  dismis when accepted
+            dismiss();
+        }
+    };
+
+    //  dismiss PWA install
+    function dismiss() {
+
+        //  ustet PWA prompt
+        setInstallPrompt( false );
+    };
+
+
+    //  manage PWA
+    useEffect( async () => {
+
+        //  initial load
+        await getInstallPrompt();
+
+        //  await for install prompt
+        setInstallPrompt( true );
+
+    }, []);
+
 /*  Component layout
 /*   *   *   *   *   *   *   *   *   *   */
 
@@ -25,6 +71,8 @@ return(
     <AuthProvider>
 
         <BarTop />
+
+        { installPrompt && <PWAInstall installPWA={ installPWA } dismiss={ dismiss } /> }
 
         <Content />
 
