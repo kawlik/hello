@@ -11,25 +11,27 @@ set -e
 #   Build app
 #   *   *   *   *   *   *   *   *   *   *   *
 
+#   delete prev build
+rm -rf dist/
+
 #   build
 npm run build
-
-#   go to build folder
-cd dist
 
 
 #   Create commit
 #   *   *   *   *   *   *   *   *   *   *   *
 
-git init
-git add -A
+git add dist/ -f
 git commit -m 'deploy'
-
 
 #   Push commit
 #   *   *   *   *   *   *   *   *   *   *   *
 
-git push -f git@github.com:kawlik/hello.git main:gh-pages
+#   go to main
+cd ..
+
+#   push
+git subtree push --prefix dist origin gh-pages
 
 
 #   After deploy
