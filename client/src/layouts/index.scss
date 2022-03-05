@@ -1,0 +1,9 @@
+@import '../../styles/common';
+
+main.app-main-bottom {
+
+    @include transition();
+
+    flex-grow: 1;
+    background-color: red;
+}

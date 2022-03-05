@@ -1,0 +1,18 @@
+/*  variables
+/*   *   *   *   *   *   *   *   *   *   */
+
+$c-font: #343434;
+$c-primary: #ffffff;
+$c-secondary: #f5f5f5;
+
+
+/*  fast mixins
+/*   *   *   *   *   *   *   *   *   *   */
+
+@mixin boxShadow( $color: $c-font ) {
+    box-shadow: 0 0 15px -5px rgba( $c-font, .5 );
+}
+
+@mixin transition( $property: all ) {
+    transition: $property ease 1000ms;
+}

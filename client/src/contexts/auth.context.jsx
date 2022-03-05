@@ -1,8 +1,12 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 //  local services
 import { getAuthWithGoogle } from '@/services/firebase.service';
 import { saveUser, readUser } from '@/services/storage.service';
+
+//  local config
+import routerConfig from '@/configs/router.config';
 
 
 /*  Component Context
@@ -21,6 +25,9 @@ export function useAuthContext() {
 /*   *   *   *   *   *   *   *   *   *   */
 
 export default function AuthProvider({ children }) {
+
+    //  navigate
+    const navigate = useNavigate();
 
     //  auth context user
     const [ user, setUser ] = useState( null );
@@ -57,15 +64,23 @@ export default function AuthProvider({ children }) {
         };
     };
 
+    //  handles logging
+    function handleLogging() {
+
+        //  redirect to login when user is nto detected
+        if( !user ) navigate( routerConfig.login );
+    };
+
 
     //  component lifecycles
     useEffect(() => {
+        
+        //  logging functions
+        handleLogging();
 
         //  storage functions
         saveLogedUser();
         readSavedUser();
-
-        console.log( user );
 
     }, [ user ]);
 

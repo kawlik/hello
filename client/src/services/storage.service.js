@@ -73,3 +73,13 @@ export function readUser() {
     //  read and return user
     return read( namespace );
 };
+
+//  delete current user from local storage
+export function deleteUser() {
+
+    //  set namespace
+    const namespace = storageConfig.namespaces.user;
+
+    //  read and return user
+    return deleteOne( namespace );
+};

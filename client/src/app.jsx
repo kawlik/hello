@@ -1,10 +1,13 @@
 import React from 'react';
+import { HashRouter as Router } from 'react-router-dom';
 
 //  local contexts
 import AuthProvider from '@/contexts/auth.context';
 
-//  local components
-import Login from '@/components/login';
+//  local lomponents
+import BarBottom from '@/components/bar-bottom';
+import BarTop from '@/components/bar-top';
+import Content from '@/layouts';
 
 
 /*  Component logic
@@ -18,10 +21,16 @@ export default function App() {
 
 return(
     <>
+    <Router>
     <AuthProvider>
 
-        <Login />
+        <BarTop />
+
+        <Content />
+
+        <BarBottom />
 
     </AuthProvider>
+    </Router>
     </>
 )};
