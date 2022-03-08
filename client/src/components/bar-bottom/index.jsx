@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 //  local contexts
 import { useAuthContext } from '@/contexts/auth.context';
@@ -26,6 +26,7 @@ export default function BarBottom() {
     const { user } = useAuthContext();
 
     //  navigate
+    const location = useLocation();
     const navigate = useNavigate();
 
     
@@ -33,21 +34,21 @@ export default function BarBottom() {
 /*   *   *   *   *   *   *   *   *   *   */
 
 return(
-    <section className='app-bar-bottom' >
+    <section className='app-bar-bottom' key={ user } >
     {
         user
         ?   <>
-                <button className='btn' onClick={ () => navigate( routerConfig.messages ) } >
+                <button className={ `btn ${ location.pathname.match( routerConfig.messages ) ? 'active' : '' }` } onClick={ () => navigate( routerConfig.messages ) } >
                     <MessageIcon />
                     <small className='text-muted d-block' >Messages</small>
                 </button>
 
-                <button className='btn' onClick={ () => navigate( routerConfig.apps ) } >
+                <button className={ `btn ${ location.pathname.match( routerConfig.apps ) ? 'active' : '' }` } onClick={ () => navigate( routerConfig.apps ) } >
                     <AppsIcon />
                     <small className='text-muted d-block' >Apps</small>
                 </button>
 
-                <button className='btn' onClick={ () => navigate( routerConfig.profile ) } >
+                <button className={ `btn ${ location.pathname.match( routerConfig.profile ) ? 'active' : '' }` } onClick={ () => navigate( routerConfig.profile ) } >
                     <PersonIcon />
                     <small className='text-muted d-block' >Profile</small>
                 </button>

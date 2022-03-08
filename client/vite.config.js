@@ -62,7 +62,7 @@ function getConfigPWA() {
 
             display: 'standalone',
             theme_color: '#ffffff',
-            background_color: '#f5f5f5',
+            background_color: '#ffffff',
 
             description: 'Hello! A modular application for household management. Here you can create a shopping list, split the bill, monitor expenses and keep an eye on the budget. See for yourself how easy it is!',
 
@@ -85,7 +85,21 @@ function getConfigPWA() {
                 },
             ],
             screenshots: [
-
+                {
+                    src: 'screenshot-login.jpg',
+                    sizes: '1080x2340',
+                    type: 'image/jpg',
+                },
+                {
+                    src: 'screenshot-login.jpg',
+                    sizes: '1080x2340',
+                    type: 'image/jpg',
+                },
+                {
+                    src: 'screenshot-login.jpg',
+                    sizes: '1080x2340',
+                    type: 'image/jpg',
+                },
             ],
         },
     };

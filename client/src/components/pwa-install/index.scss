@@ -6,6 +6,7 @@ section.app-pwa-install {
     @include boxShadow();
     @include transition();
 
+    z-index: 5;
     padding: 5px;
     gap: 5px;
 

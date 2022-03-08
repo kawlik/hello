@@ -29,5 +29,7 @@ section.app-bar-bottom {
         color: $c-font;
         display: block;
         flex-basis: 100%;
+
+        &.active {  color: gold; }
     }
 }

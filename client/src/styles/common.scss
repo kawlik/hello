@@ -32,7 +32,7 @@ $c-github: #333333;
 }
 
 @mixin transition( $property: all ) {
-    transition: $property ease 1000ms;
+    transition: $property ease 300ms;
 }
 
 /*  fast animations

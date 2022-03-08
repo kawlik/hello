@@ -2,8 +2,8 @@
 
 main#app-main-content {
 
-    @include transition();
     @include animateEaseIn();
+    animation-fill-mode: backwards;
 
     gap: 10px;
     padding: 10px;

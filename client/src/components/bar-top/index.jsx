@@ -29,7 +29,7 @@ export default function BarTop() {
 /*   *   *   *   *   *   *   *   *   *   */
 
 return(
-    <section className='app-bar-top' >
+    <section className='app-bar-top' key={ user } >
     {
         user
         ? <>
