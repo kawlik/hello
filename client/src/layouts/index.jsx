@@ -2,7 +2,13 @@ import React, { useEffect } from 'react';
 import { Navigate, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 
 //  local layouts
+import Apps from '@/layouts/apps';
 import Login from '@/layouts/login';
+import Messages from '@/layouts/messages';
+import Profile from '@/layouts/profile';
+
+//  local apps
+import TestApp from '@/layouts/apps/test-app';
 
 //  local contexts
 import { useAuthContext } from '@/contexts/auth.context';
@@ -36,7 +42,7 @@ export default function Content() {
     };
 
     function touchMove( event ) {
-        onTouchMove( event, '#app-main-content', location.pathname, [ routerConfig.messages, routerConfig.apps, routerConfig.profile ], navigate );
+        onTouchMove( event, '#app-main-content',  location.pathname.split( /\b\// )[0], [ routerConfig.messages, routerConfig.apps, routerConfig.profile ], navigate );
     };
 
     function touchEnd( event ) {
@@ -71,11 +77,14 @@ return(
         <Route exact path={ routerConfig.login } element={ <Login /> } />
 
 
-        <Route exact path={ routerConfig.messages } element={ <h2>Messages</h2> } />
+        <Route exact path={ routerConfig.messages } element={ <Messages /> } />
 
-        <Route exact path={ routerConfig.apps } element={ <h2>Apps</h2> } />
+        <Route exact path={ routerConfig.apps } element={ <Apps /> } />
 
-        <Route exact path={ routerConfig.profile } element={ <h2>Profile</h2> } />
+            <Route exact path={ routerConfig.apps + routerConfig.appTest } element={ <TestApp /> } />
+
+
+        <Route exact path={ routerConfig.profile } element={ <Profile /> } />
 
         
         <Route path='*' element={ <Navigate replace to={ routerConfig.login } /> } />

@@ -11,4 +11,7 @@ export default {
 
     //  main path for aps
     apps: '/apps',
+
+    //  apps subpaths queries
+    appTest: '/test',
 };

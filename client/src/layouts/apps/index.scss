@@ -1,0 +1,21 @@
+@import '../../styles/common';
+
+section#apps-container {
+
+    @include transition();
+
+    display: grid;
+    grid-template-columns: repeat( 3, 1fr );
+    gap: 10px;
+    
+    button.btn {
+
+        @include boxShadow();
+        @include transition();
+
+        border-radius: 10px;
+        font-size: large;
+        text-align: center;
+
+        svg { font-size: xx-large; }
+    }}
