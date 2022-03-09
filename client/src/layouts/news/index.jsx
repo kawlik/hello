@@ -1,17 +1,13 @@
 import React from 'react';
 
-//  local context
-import { useAuthContext } from '@/contexts/auth.context';
-
 //  component style
 import './index.scss';
-
 
 
 /*  Component logic
 /*   *   *   *   *   *   *   *   *   *   */
 
-export default function Messages() {
+export default function News() {
     
     
 /*  Component layout
@@ -19,7 +15,7 @@ export default function Messages() {
 
 return(
     <>
-        <h2>Messages</h2>
+        <h2>News</h2>
 
         <hr className='mt-0' />
     </>

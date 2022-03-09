@@ -20,8 +20,15 @@ import './index.scss';
 export default function Login() {
 
     //  get auth context login methods
-    const { loginWithGoogle, loginAnonymously } = useAuthContext();
-    
+    const { loginWithGoogle, loginAnonymously, logout } = useAuthContext();
+
+    //  on initial render
+    useEffect(() => {
+
+        logout();
+         
+    }, []);
+
 
 /*  Component layout
 /*   *   *   *   *   *   *   *   *   *   */

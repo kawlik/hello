@@ -1,17 +1,33 @@
 export default {
 
-    //  path for login
-    login: '/login',
+    //  routing for login
+    login: {
+        name: 'Login',
+        path: '/login',
+    },
 
-    //  path for profile
-    profile: '/profile',
+    //  routing for news
+    news: {
+        name: 'News',
+        path: '/news',
+    },
 
-    //  path for messages
-    messages: '/messages',
+    //  routing for user
+    user: {
+        name: 'User',
+        path: '/user',
+    },
 
-    //  main path for aps
-    apps: '/apps',
+    //  routing for apps
+    apps: {
+        name: 'Apps',
+        path: '/apps',
 
-    //  apps subpaths queries
-    appTest: '/test',
+        //  list of available subapps
+        list: {
+
+            //  testing app
+            test: { name: 'Test', path: '/test' },
+        },
+    },
 };

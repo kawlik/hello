@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useAuthContext } from '@/contexts/auth.context';
 
 //  local config
-import routerConfig from '@/configs/router.config';
+import { names, routes, matchRoute } from '@/services/router.service';
 
 //  icons
 import AppsIcon from '@mui/icons-material/Apps';
@@ -38,19 +38,19 @@ return(
     {
         user
         ?   <>
-                <button className={ `btn ${ location.pathname.match( routerConfig.messages ) ? 'active' : '' }` } onClick={ () => navigate( routerConfig.messages ) } >
+                <button className={ `btn ${ matchRoute( location, routes.news ) ? 'active' : '' }` } onClick={ () => navigate( routes.news ) } >
                     <MessageIcon />
-                    <small className='text-muted d-block' >Messages</small>
+                    <small className='text-muted d-block' >{ names.news }</small>
                 </button>
 
-                <button className={ `btn ${ location.pathname.match( routerConfig.apps ) ? 'active' : '' }` } onClick={ () => navigate( routerConfig.apps ) } >
+                <button className={ `btn ${ matchRoute( location, routes.apps ) ? 'active' : '' }` } onClick={ () => navigate( routes.apps ) } >
                     <AppsIcon />
-                    <small className='text-muted d-block' >Apps</small>
+                    <small className='text-muted d-block' >{ names.apps }</small>
                 </button>
 
-                <button className={ `btn ${ location.pathname.match( routerConfig.profile ) ? 'active' : '' }` } onClick={ () => navigate( routerConfig.profile ) } >
+                <button className={ `btn ${ matchRoute( location, routes.user ) ? 'active' : '' }` } onClick={ () => navigate( routes.user ) } >
                     <PersonIcon />
-                    <small className='text-muted d-block' >Profile</small>
+                    <small className='text-muted d-block' >{ names.user }</small>
                 </button>
             </>
         :   <>

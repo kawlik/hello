@@ -1,8 +1,10 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 //  local services
 import { getAuthWithGoogle, getAuthAnonymously } from '@/services/firebase.service';
 import { saveUser, readUser, deleteUser } from '@/services/storage.service';
+import { routes } from '@/services/router.service';
 
 
 /*  Component Context
@@ -22,9 +24,24 @@ export function useAuthContext() {
 
 export default function AuthProvider({ children }) {
 
+    //   navigate
+    const navigate = useNavigate();
+
     //  auth context user
     const [ user, setUser ] = useState( null );
 
+    //  login functions base
+    function login( newUser ) {
+
+        //  test user
+        if( !newUser ) { return; }
+        
+        //  set user
+        setUser( newUser );
+        
+        //  navigate to proper route
+        navigate( routes.apps );
+    };
 
     //  login functions
     async function loginWithGoogle() {
@@ -33,7 +50,7 @@ export default function AuthProvider({ children }) {
         const authUser = await getAuthWithGoogle();
 
         //  test and set user
-        if( authUser ) setUser( authUser );
+        login( authUser );
     };
 
     async function loginAnonymously() {
@@ -42,11 +59,14 @@ export default function AuthProvider({ children }) {
         const authUser = await getAuthAnonymously();
 
         //  test and set user
-        if( authUser ) setUser( authUser );
+        login( authUser );
     };
 
     //  user logout
     function logout() {
+
+        //  test if user exist
+        if( !user ) { return; }
 
         //  remove user
         setUser( null );
@@ -72,7 +92,7 @@ export default function AuthProvider({ children }) {
             const savedUser = readUser();
 
             //  test and set user
-            if( savedUser ) setUser( savedUser );
+            login( savedUser );
         };
     };
 

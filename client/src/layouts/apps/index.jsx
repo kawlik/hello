@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-//  local config
-import routerConfig from '../../configs/router.config';
+//  local service
+import { routes } from '@/services/router.service';
 
 //  icons
 import AbcIcon from '@mui/icons-material/Abc';
@@ -31,7 +31,7 @@ return(
 
         <section id='apps-container'>
 
-            <button className='btn btn-light' onClick={ () => navigate( routerConfig.apps + routerConfig.appTest ) } >
+            <button className='btn btn-light' onClick={ () => navigate( routes.appTest ) } >
                 <AbcIcon />
                 <small className='text-muted d-block' >Test App</small>
             </button>

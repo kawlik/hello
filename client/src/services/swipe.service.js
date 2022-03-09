@@ -15,7 +15,7 @@ export function onTouchStart( event ) {
     touch.y = event.touches[0].clientY;
 };
 
-export function onTouchMove( event, selector, view, views, callback ) {
+export function onTouchMove( event, selector, views, location, navigate ) {
 
     //  return when touch not detected
     if( !touch.x || !touch.y ) return;
@@ -51,16 +51,21 @@ export function onTouchMove( event, selector, view, views, callback ) {
         //  parse navigation data
         const min = 0;
         const max = views.length - 1;
-        const idx = views.indexOf( view );
+        const idx = views.indexOf( location.pathname.split( /\b\// )[0] );
+
+
+        //  abandon when location dose not match
+        if( idx === -1 ) { return; }
+
 
         //  on swipe left
         if( delta_x < 0 && idx - 1 >= min ) {
-            return callback( views[ idx - 1 ] );
+            return navigate( views[ idx - 1 ] );
         };
 
         //  on swipe right
         if( delta_x > 0 && idx + 1 <= max ) {
-            return callback( views[ idx + 1 ] );
+            return navigate( views[ idx + 1 ] );
         };
     };
 };

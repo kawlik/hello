@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Navigate, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 
 //  local layouts
 import Apps from '@/layouts/apps';
 import Login from '@/layouts/login';
-import Messages from '@/layouts/messages';
-import Profile from '@/layouts/profile';
+import News from '@/layouts/news';
+import User from '@/layouts/user';
 
 //  local apps
 import TestApp from '@/layouts/apps/test-app';
@@ -15,9 +15,7 @@ import { useAuthContext } from '@/contexts/auth.context';
 
 //  local service
 import { onTouchStart, onTouchMove, onTouchEnd } from '@/services/swipe.service';
-
-//  local config
-import routerConfig from '@/configs/router.config';
+import { routes } from '@/services/router.service';
 
 //  component style
 import './index.scss';
@@ -42,30 +40,13 @@ export default function Content() {
     };
 
     function touchMove( event ) {
-        onTouchMove( event, '#app-main-content',  location.pathname.split( /\b\// )[0], [ routerConfig.messages, routerConfig.apps, routerConfig.profile ], navigate );
+        onTouchMove( event, '#app-main-content', [ routes.news, routes.apps, routes.user ], location, navigate );
     };
 
     function touchEnd( event ) {
         onTouchEnd( event, '#app-main-content' );
     };
 
-    
-    //  allways check if user is set 
-    useEffect(() => {
-
-        //  redirect based by user status
-        if( user ) {
-
-            //  redirect to login
-            navigate( routerConfig.apps );
-
-        } else {
-
-            //  redirect to login
-            navigate( routerConfig.login );
-        };
-        
-    }, [ user ]);
     
 /*  Component layout
 /*   *   *   *   *   *   *   *   *   *   */
@@ -74,20 +55,23 @@ return(
     <main id='app-main-content' key={ location.pathname } onTouchStart={ touchStart } onTouchMove={ touchMove } onTouchEnd={ touchEnd } >
     <Routes>
 
-        <Route exact path={ routerConfig.login } element={ <Login /> } />
+        <Route exact path={ routes.login } element={ <Login /> } />
 
+        {
+            user && <>
 
-        <Route exact path={ routerConfig.messages } element={ <Messages /> } />
+                <Route exact path={ routes.news } element={ <News /> } />
 
-        <Route exact path={ routerConfig.apps } element={ <Apps /> } />
+                <Route exact path={ routes.user } element={ <User /> } />
 
-            <Route exact path={ routerConfig.apps + routerConfig.appTest } element={ <TestApp /> } />
+                <Route exact path={ routes.apps } element={ <Apps /> } />
 
+                    <Route exact path={ routes.appTest } element={ <TestApp /> } />
 
-        <Route exact path={ routerConfig.profile } element={ <Profile /> } />
+            </>
+        }
 
-        
-        <Route path='*' element={ <Navigate replace to={ routerConfig.login } /> } />
+        <Route path='*' element={ <Navigate replace to={ routes.login } /> } />
 
     </Routes>
     </main>

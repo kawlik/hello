@@ -23,7 +23,7 @@ export default function BarTop() {
 
     //   navigate
     const navigate = useNavigate();
-
+    
     
 /*  Component layout
 /*   *   *   *   *   *   *   *   *   *   */
