@@ -3,6 +3,12 @@ import React from 'react';
 //  local context
 import { useAuthContext } from '@/contexts/auth.context';
 
+//  local service
+import { names } from '@/services/router.service';
+
+//  local components
+import EntryText from '@/components/entry-text';
+
 //  component style
 import './index.scss';
 
@@ -19,8 +25,6 @@ export default function TestApp() {
 
 return(
     <>
-        <h2>Test App</h2>
-
-        <hr className='mt-0' />
+        <EntryText text={ names.TestApp } />
     </>
 )};

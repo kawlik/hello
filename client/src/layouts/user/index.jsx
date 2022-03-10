@@ -1,5 +1,14 @@
 import React from 'react';
 
+//  local contexts
+import { useAuthContext } from '@/contexts/auth.context';
+
+//  local service
+import { names } from '@/services/router.service';
+
+//  local components
+import EntryText from '@/components/entry-text';
+
 //  component style
 import './index.scss';
 
@@ -9,14 +18,15 @@ import './index.scss';
 
 export default function User() {
     
+    //  parse user
+    const { user } = useAuthContext();
+
     
 /*  Component layout
 /*   *   *   *   *   *   *   *   *   *   */
 
 return(
     <>
-        <h2>User</h2>
-
-        <hr className='mt-0' />
+        <EntryText text={ `Hello ${ user?.displayName || 'Anonymous' }!` } />
     </>
 )};

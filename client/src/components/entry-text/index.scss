@@ -1,0 +1,14 @@
+@import '../../styles/common';
+
+section.app-entry-text {
+
+    @include animateEaseIn();
+    @include transition();
+
+    padding: 5px;
+    width: 100%;
+    
+    overflow-x: hidden;
+
+    h2 { width: max-content; }
+}

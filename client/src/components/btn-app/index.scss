@@ -1,0 +1,15 @@
+@import '../../styles/common';
+
+button.app-btn-app {
+
+    @include boxShadow();
+    @include transition();
+
+    aspect-ratio: 1 / 1;
+
+    border-radius: 10px;
+    font-size: large;
+    text-align: center;
+
+    svg { font-size: xx-large; }
+}

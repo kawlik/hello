@@ -40,7 +40,7 @@ export default function AuthProvider({ children }) {
         setUser( newUser );
         
         //  navigate to proper route
-        navigate( routes.apps );
+        navigate( routes.user );
     };
 
     //  login functions
@@ -103,6 +103,9 @@ export default function AuthProvider({ children }) {
         //  storage functions
         saveLogedUser();
         readSavedUser();
+
+        // debug user
+        if( user ) console.log( user );
 
     }, [ user ]);
 

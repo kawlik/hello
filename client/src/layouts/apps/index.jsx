@@ -1,8 +1,11 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
 //  local service
-import { routes } from '@/services/router.service';
+import { routes, names } from '@/services/router.service';
+
+//  local components
+import EntryText from '@/components/entry-text';
+import BtnApp from '@/components/btn-app';
 
 //  icons
 import AbcIcon from '@mui/icons-material/Abc';
@@ -15,9 +18,6 @@ import './index.scss';
 /*   *   *   *   *   *   *   *   *   *   */
 
 export default function Apps() {
-    
-    //  navigate
-    const navigate = useNavigate();
 
     
 /*  Component layout
@@ -25,16 +25,11 @@ export default function Apps() {
 
 return(
     <>
-        <h2>Apps</h2>
+        <EntryText text={ names.apps } />
 
-        <hr className='mt-0' />
+        <section id='apps-container' >
 
-        <section id='apps-container'>
-
-            <button className='btn btn-light' onClick={ () => navigate( routes.appTest ) } >
-                <AbcIcon />
-                <small className='text-muted d-block' >Test App</small>
-            </button>
+            <BtnApp name={ names.appTest } path={ routes.appTest } icon={ <AbcIcon /> } />
 
         </section>
     </>
