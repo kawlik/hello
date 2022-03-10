@@ -3,12 +3,6 @@ import React from 'react';
 //  local contexts
 import { useAuthContext } from '@/contexts/auth.context';
 
-//  local service
-import { names } from '@/services/router.service';
-
-//  local components
-import EntryText from '@/components/entry-text';
-
 //  component style
 import './index.scss';
 
@@ -27,6 +21,6 @@ export default function User() {
 
 return(
     <>
-        <EntryText text={ `Hello ${ user?.displayName || 'Anonymous' }!` } />
+
     </>
 )};

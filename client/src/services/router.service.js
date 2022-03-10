@@ -31,6 +31,15 @@ export const names = {
     appTest: routerConfig.apps.list.test.name,
 };
 
+//  used paths
+export const paths = {
+    [ routes.login ]: names.login,
+    [ routes.news ]: names.news,
+    [ routes.user ]: names.user,
+    [ routes.apps ]: names.apps,
+    [ routes.appTest ]: names.appTest,
+};
+
 //  match route
 export function matchRoute( location, path ) {
     return Boolean( location.pathname.match( path ));

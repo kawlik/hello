@@ -3,9 +3,6 @@ import React from 'react';
 //  local service
 import { names } from '@/services/router.service';
 
-//  local components
-import EntryText from '@/components/entry-text';
-
 //  component style
 import './index.scss';
 
@@ -21,6 +18,6 @@ export default function News() {
 
 return(
     <>
-        <EntryText text={ names.news } />
+    
     </>
 )};

@@ -4,7 +4,6 @@ import React from 'react';
 import { routes, names } from '@/services/router.service';
 
 //  local components
-import EntryText from '@/components/entry-text';
 import BtnApp from '@/components/btn-app';
 
 //  icons
@@ -25,8 +24,6 @@ export default function Apps() {
 
 return(
     <>
-        <EntryText text={ names.apps } />
-
         <section id='apps-container' >
 
             <BtnApp name={ names.appTest } path={ routes.appTest } icon={ <AbcIcon /> } />

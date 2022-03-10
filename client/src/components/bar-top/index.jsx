@@ -1,8 +1,11 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 //  local contexts
 import { useAuthContext } from '@/contexts/auth.context';
+
+//  local service
+import { paths } from '@/services/router.service';
 
 //  icons
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
@@ -21,7 +24,8 @@ export default function BarTop() {
     //  get user
     const { user, logout } = useAuthContext();
 
-    //   navigate
+    //   location and navigate
+    const location = useLocation();
     const navigate = useNavigate();
     
     
@@ -35,7 +39,7 @@ return(
         ? <>
             <button className='btn' onClick={ () => navigate(-1) } >
                 <ArrowCircleLeftIcon />
-                <small className='text-muted align-middle p-2' >Go back</small>
+                <small className='text-muted align-middle p-2' >{ paths[ location.pathname ] }</small>
             </button>
 
             <button className='btn' onClick={ () => logout() } >
