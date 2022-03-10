@@ -63,6 +63,7 @@ function getConfigPWA() {
             display: 'standalone',
             theme_color: '#ffffff',
             background_color: '#ffffff',
+            orientation: 'portrait',
 
             description: 'Hello! A modular application for household management. Here you can create a shopping list, split the bill, monitor expenses and keep an eye on the budget. See for yourself how easy it is!',
 
