@@ -4,8 +4,8 @@ import React from 'react';
 import imgAnonymous from '@/assets/anonymous.png';
 
 //  icons
-import ContactMailIcon from '@mui/icons-material/ContactMail';
-import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
+import QrCodeIcon from '@mui/icons-material/QrCode';
+import ShareIcon from '@mui/icons-material/Share';
 
 //  style
 import './index.scss';
@@ -25,20 +25,20 @@ return(
 
         <img src={ user?.photoURL || imgAnonymous } alt={ user?.displayName || 'Anonymous' } className='user-photo' />
 
-        <h2 className='lead' >{ user?.displayName || 'Anonymous' }</h2>
+        <h2 className='lead mb-4' >{ user?.displayName || 'Anonymous' }</h2>
 
-        <button className='btn btn-dark btn-id' >Get ID</button>
-
-        <div className='bottom' >
-
-            <button className='btn'>
-                <ContactMailIcon />
+        <div className='info-block' >
+            <button className='btn btn-dark btn-id' >
+                <QrCodeIcon />
+                <small className='ms-2' >Get ID</small>
             </button>
+        </div>
 
-            <button className='btn' >
-                <ContactPhoneIcon />
+        <div className='info-block' >
+            <button className='btn btn-dark btn-id' >
+                <ShareIcon />
+                <small className='ms-2' >Share</small>
             </button>
-
         </div>
 
     </section>
