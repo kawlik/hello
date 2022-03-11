@@ -32,7 +32,7 @@ cd ..
 
 #   push
 #   git subtree push --prefix client/dist origin gh-pages
-git push origin `git subtree split --prefix dist master`:gh-pages --force
+git push origin `git subtree split --prefix client/dist master`:gh-pages --force
 
 
 #   After deploy
