@@ -3,6 +3,9 @@ import React from 'react';
 //  local contexts
 import { useAuthContext } from '@/contexts/auth.context';
 
+//  local components
+import UserView from '../../components/user-view';
+
 //  component style
 import './index.scss';
 
@@ -21,6 +24,6 @@ export default function User() {
 
 return(
     <>
-
+        <UserView user={ user } />
     </>
 )};

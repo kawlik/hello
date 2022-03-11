@@ -28,7 +28,7 @@ git commit -m 'deploy'
 #   *   *   *   *   *   *   *   *   *   *   *
 
 #   go to main
-#   cd ..
+cd ..
 
 #   push
 #   git subtree push --prefix client/dist origin gh-pages
@@ -39,7 +39,7 @@ git push origin `git subtree split --prefix dist master`:gh-pages --force
 #   *   *   *   *   *   *   *   *   *   *   *
 
 #   go to dev folder
-#   cd -
+cd -
 
 #   log success
 echo 'Deploy completed successfully!'

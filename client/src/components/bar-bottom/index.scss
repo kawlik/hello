@@ -30,6 +30,6 @@ section.app-bar-bottom {
         display: block;
         flex-basis: 100%;
 
-        &.active {  color: gold; }
+        &.active {  color: $c-active; }
     }
 }
