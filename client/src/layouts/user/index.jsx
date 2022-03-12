@@ -34,9 +34,12 @@ return(
 
         </ul>
 
-        <button id='app-add-user' className='app-btn-app btn btn-light' >
-            <PersonAddIcon />
-            <small className='text-muted d-block' >Add</small>
-        </button>
+        <aside id='app-add-user'>
+
+            <button className='app-btn-app btn btn-light' >
+                <PersonAddIcon />
+            </button>
+
+        </aside>
     </>
 )};
