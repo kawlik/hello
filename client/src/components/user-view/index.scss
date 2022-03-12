@@ -9,9 +9,11 @@ section.app-user-view {
     margin: 10px;
     border-radius: 10px;
 
+    display: block;
+
     background-color: $c-primary;
     text-align: center;
-    overflow: hidden;
+    // overflow: hidden;
 
     img.user-photo {
 
@@ -33,7 +35,16 @@ section.app-user-view {
         padding-bottom: 10px;
         background-color: $c-third;
 
+        &:first-of-type {
+
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
         &:last-of-type {
+
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
             padding: 0;
         }
 

@@ -4,7 +4,8 @@ import React from 'react';
 import { useAuthContext } from '@/contexts/auth.context';
 
 //  local components
-import UserView from '../../components/user-view';
+import UserView from '@/components/user-view';
+import AddFriend from '@/components/add-friend';
 
 //  component style
 import './index.scss';
@@ -25,5 +26,7 @@ export default function User() {
 return(
     <>
         <UserView user={ user } />
+
+        <AddFriend />
     </>
 )};
