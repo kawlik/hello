@@ -14,7 +14,7 @@ import './index.scss';
 /*  Component logic
 /*   *   *   *   *   *   *   *   *   *   */
 
-export default function UserView({ user }) {
+export default function UserView({ user, toUserID }) {
 
     
 /*  Component layout
@@ -28,7 +28,7 @@ return(
         <h2 className='lead mb-4' >{ user?.displayName || 'Anonymous' }</h2>
 
         <div className='info-block' >
-            <button className='btn btn-dark btn-id' >
+            <button className='btn btn-dark btn-id' onClick={ () => toUserID() } >
                 <QrCodeIcon />
                 <small className='ms-2' >Get ID</small>
             </button>

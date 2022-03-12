@@ -10,6 +10,11 @@ import User from '@/layouts/user';
 //  local apps
 import TestApp from '@/layouts/apps/test-app';
 
+//  local user utilities
+import UserAdd from '@/layouts/User/user-add';
+import UserQrs from '@/layouts/User/user-qrs';
+import UserUid from '@/layouts/User/user-uid';
+
 //  local contexts
 import { useAuthContext } from '@/contexts/auth.context';
 
@@ -62,11 +67,17 @@ return(
 
                 <Route exact path={ routes.news } element={ <News /> } />
 
-                <Route exact path={ routes.user } element={ <User /> } />
-
                 <Route exact path={ routes.apps } element={ <Apps /> } />
 
                     <Route exact path={ routes.appTest } element={ <TestApp /> } />
+
+                <Route exact path={ routes.user } element={ <User /> } />
+
+                    <Route exact path={ routes.userAdd } element={ <UserAdd /> } />
+
+                    <Route exact path={ routes.userQrs } element={ <UserQrs /> } />
+
+                    <Route exact path={ routes.userUid } element={ <UserUid /> } />
 
             </>
         }

@@ -16,6 +16,19 @@ export default {
     user: {
         name: 'User',
         path: '/user',
+
+        //  list of available user actions
+        list: {
+
+            //  adding new friend
+            add: { name: 'Add new firend', path: '/add', },
+
+            //  user qr code scaner
+            qrs: { name: 'QR code scaner', path: '/qrs', },
+
+            //  user ID view
+            uid: { name: 'User ID', path: '/uid', },
+        },
     },
 
     //  routing for apps
