@@ -17,7 +17,7 @@ export default function UserQrs() {
     function onResult( result, error ) {
 
         //  test error
-        if( error ) return console.error( err );
+        if( error ) return console.error( error );
 
         //  test result
         if( result ) {
