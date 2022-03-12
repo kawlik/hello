@@ -18,18 +18,11 @@ export default function AddFriend() {
 
 return(
     <section className='app-add-friend' >
+    <form className='input-group' >
 
-        <form className='input-group' >
+        <input type='text' className='form-control' placeholder='Enter user name or ID' />
+        <span class='input-group-text' ><SearchIcon /></span>
 
-            <input type='text' className='form-control' placeholder='Enter user name or ID' />
-            <span class='input-group-text' ><SearchIcon /></span>
-
-        </form>
-
-        <div className='result p-1' >
-
-
-        </div>
-
+    </form>
     </section>  
 )};

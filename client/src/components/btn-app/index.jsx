@@ -8,7 +8,7 @@ import './index.scss';
 /*  Component logic
 /*   *   *   *   *   *   *   *   *   *   */
 
-export default function BtnApp({ name, path, children, icon }) {
+export default function BtnApp({ name, path, icon }) {
 
     //  navigate
     const navigate = useNavigate();
@@ -18,7 +18,7 @@ export default function BtnApp({ name, path, children, icon }) {
 /*   *   *   *   *   *   *   *   *   *   */
 
 return(
-    <button className='app-btn-app btn btn-light'onClick={ () => navigate( path ) } >
+    <button className='app-btn-app btn btn-light' onClick={ () => navigate( path ) } >
         { icon }
         <small className='text-muted d-block' >{ name }</small>
     </button>

@@ -5,7 +5,10 @@ import { useAuthContext } from '@/contexts/auth.context';
 
 //  local components
 import UserView from '@/components/user-view';
-import AddFriend from '@/components/add-friend';
+import BtnApp from '@/components/btn-app';
+
+//  icons
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
 
 //  component style
 import './index.scss';
@@ -25,8 +28,11 @@ export default function User() {
 
 return(
     <>
-        <AddFriend />
         <UserView user={ user } />
 
+        <button id='app-add-user' className='app-btn-app btn btn-light' >
+            <PersonAddIcon />
+            <small className='text-muted d-block' >Add</small>
+        </button>
     </>
 )};
