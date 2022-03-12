@@ -11,9 +11,9 @@ import User from '@/layouts/user';
 import TestApp from '@/layouts/apps/test-app';
 
 //  local user utilities
-import UserAdd from '@/layouts/User/user-add';
-import UserQrs from '@/layouts/User/user-qrs';
-import UserUid from '@/layouts/User/user-uid';
+import UserAdd from '@/layouts/user/user-add';
+import UserQrs from '@/layouts/user/user-qrs';
+import UserUid from '@/layouts/user/user-uid';
 
 //  local contexts
 import { useAuthContext } from '@/contexts/auth.context';
