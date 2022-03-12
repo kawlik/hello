@@ -25,8 +25,8 @@ export default function User() {
 
 return(
     <>
+        <AddFriend />
         <UserView user={ user } />
 
-        <AddFriend />
     </>
 )};
