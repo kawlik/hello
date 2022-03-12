@@ -37,6 +37,6 @@ return(
             aspectRatio: 1,
         }} />
 
-        <button className='btn btn-success btn-user-qr-reader' disabled={ result ? false : true }>Add</button>
+        <button className='btn btn-success btn-user-qr-reader' disabled={ result ? false : true } >Add friend</button>
     </>
 )};
