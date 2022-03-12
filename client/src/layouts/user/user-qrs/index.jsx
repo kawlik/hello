@@ -32,7 +32,7 @@ export default function UserQrs() {
 
 return(
     <>
-        <QrReader className='user-qr-reader' onResult={ () => {} } constraints={{
+        <QrReader className='user-qr-reader' onResult={ onResult } constraints={{
             facingMode: 'environment',
             aspectRatio: 1,
         }} />
